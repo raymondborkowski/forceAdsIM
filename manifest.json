@@ -1,0 +1,18 @@
+{
+  "name": "Incognito Popup Button",
+  "description": "Creates an incognito popup with the omnibox hidden.",
+  "version": "1.0",
+  "background": {
+    "persistent": true,
+    "scripts": ["popup.js"]
+  },
+  "permissions": [
+    "tabs"
+],
+  "incognito":"split",
+  "browser_action": {
+    "default_title": "New Incognito Popup",
+    "default_icon": "icon.png"
+  },
+  "manifest_version": 2
+}
