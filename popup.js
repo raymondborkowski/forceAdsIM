@@ -6,15 +6,12 @@
 
 //<IM> URL
 var urlIntent = "http://a.intentmedia.net/adServer/forceAds";
-var temp = 0;
 //Checks to see if current view is in incognito or not
 chrome.browserAction.onClicked.addListener( function(tab) {
 		if(tab.incognito){
-			temp = 0;
 		    getCookie();
 		}
 		else{
-			temp = 1;
 			createWindow();
 			setTimeout(intentURL, 1);
 		}
@@ -32,9 +29,7 @@ function createWindow(){
 //Opens up <IM> force cookies page in current incognito window
 //NEEDS WORK
 function intentURL(){
-	if(temp === 1){
-		chrome.tabs.create({url: urlIntent});
-	}
+	chrome.tabs.create({url: urlIntent});
 }
 //Cookie getting script
 //Checks and alerts if cookie is set or not for current page
