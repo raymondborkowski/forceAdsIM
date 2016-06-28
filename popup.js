@@ -1,11 +1,19 @@
-//Intent URL
+//<IM> URL
 var urlIntent = "http://a.intentmedia.net/adServer/forceAds";
-var url = "http://www.google1.com";
+
 //Opens incgonito window with current URL
-//Need to open a new tab within this incognito tab for intent cookie clearing URL
-//now need to switch them around so that they open corectly
-function test(){
-	chrome.browserAction.onClicked.addListener(function() {
+//now need to switch them around so that they open in correct order
+
+//Checks to see if current view is in incognito or not
+chrome.browserAction.onClicked.addListener( function(tab) {
+		if(tab.incognito)
+		    alert("In Incognito Mode already!");
+		else
+			createWindow();
+});
+
+//Creates copy of current window in incognito window
+function createWindow(){
 	chrome.tabs.query({
 		'active': true,
 		'windowId': chrome.windows.WINDOW_ID_CURRENT
@@ -13,19 +21,7 @@ function test(){
 		url = tabs[0].url;
 		chrome.windows.create({url: url, incognito: true});
 	});
-});
 };
 
-test();
-
+//Opens up <IM> force cookies page in current incognito window
 setTimeout(function() {chrome.tabs.create({url: urlIntent});}, 1);
-
-setTimeout(function() {
-						chrome.tabs.getCurrent(function(tab) {
-    					chrome.tabs.remove(tab.id, function() { });
-						});
-					}, 3000);
-// setTimeout(function() {chrome.tabs.getCurrent(function(tab) {
-//     chrome.tabs.remove(tab.id, function(){});
-// };}, 5000);
-//setTimeout(function() {alert(url);}, 5000);

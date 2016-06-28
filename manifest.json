@@ -1,7 +1,7 @@
 {
-  "name": "Incognito Popup Button",
-  "description": "Creates an incognito popup with the omnibox hidden.",
-  "version": "1.0",
+  "name": "<IM> Incognito Window",
+  "description": "Creates an incognito window of current screen with forced ads.",
+  "version": "1.2",
   "background": {
     "persistent": true,
     "scripts": ["popup.js"]
@@ -11,7 +11,7 @@
 ],
   "incognito":"split",
   "browser_action": {
-    "default_title": "New Incognito Popup",
+    "default_title": "<IM> Incognito Window",
     "default_icon": "icon.png"
   },
   "manifest_version": 2
