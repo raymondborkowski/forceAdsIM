@@ -7,7 +7,9 @@
     "scripts": ["popup.js"]
   },
   "permissions": [
-    "tabs"
+    "tabs",
+    "cookies",
+    "*://*.a.intentmedia.net/*"
 ],
   "incognito":"split",
   "browser_action": {
