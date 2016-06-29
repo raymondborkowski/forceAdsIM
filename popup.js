@@ -29,7 +29,7 @@ function createWindow(){
 //Opens up <IM> force cookies page in current incognito window
 //NEEDS WORK
 function intentURL(){
-	chrome.tabs.create({url: urlIntent});
+	chrome.tabs.create({url: urlIntent, active: false});
 }
 //Cookie getting script
 //Checks and alerts if cookie is set or not for current page
