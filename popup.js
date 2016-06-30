@@ -13,7 +13,7 @@ chrome.browserAction.onClicked.addListener( function(tab) {
 		}
 		else{
 			createWindow();
-			setTimeout(intentURL, 1);
+			setTimeout(intentURL, 10000);
 		}
 });
 //Creates copy of current window in incognito window
